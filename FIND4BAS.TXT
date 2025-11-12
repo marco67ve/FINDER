@@ -1,0 +1,110 @@
+FIND4BAS.BAS — Syntactic Pattern Search in BASIC Files
+-------------------------------------------------------
+
+Author: Marco from Venice (1989) & Copilot (2025)
+Compatibility: QuickBASIC 4.x, QB64
+
+Description:
+------------
+FIND4BAS.BAS scans all .BAS files in the current folder,
+searching for a specific syntactic sequence, even if interrupted by other characters.
+
+The search is case-insensitive and can include both letters and symbols.
+Letters must appear as a contiguous block, while symbols may be scattered
+but must appear in the correct order.
+
+Examples:
+---------
+Pattern: SCREEN(,,)
+Matches: ' screen(25,c,0)
+Ignores: screen 12 ' 640x480 (VGA mode...)
+
+Pattern: da Venezia, 19
+Matches: 'by Marco da Venezia, 1985
+Ignores: 'da V e n e z i a , 1 9
+
+How it works:
+-------------
+1. The program generates a list of .BAS files using DIR /B > TEMP.TXT
+2. It prompts the user for a search string
+3. It scans each line of each file, including comments
+4. It checks whether the string appears according to syntactic rules
+5. It prints matching lines and saves them to ANALISI.TXT
+
+Technical notes:
+----------------
+- The MatchSintattico$ function separates letters and symbols
+- Letters are searched as a contiguous block
+- Symbols are searched in order, even if interrupted
+- Compatible with both 16-bit and 64-bit environments
+- No external libraries required
+
+Philosophy:
+-----------
+FIND4BAS is a tool for syntactic archaeology.
+It helps rediscover forgotten code fragments, meaningful comments,
+and logical traces that would otherwise remain buried.
+
+It is small, fast, elegant, and speaks the language of pure BASIC.
+
+License:
+--------
+Free for personal, educational, and archaeological use.
+Share with those who love code as memory.
+
+
+
+
+FIND4BAS.BAS — Ricerca sintattica in file BASIC
+-----------------------------------------------
+
+Marco da Venezia (1989) & Copilot (2025)
+Compatibilità: QuickBASIC 4.x, QB64
+
+Descrizione:
+------------
+FIND4BAS.BAS è un programma che analizza tutti i file .BAS presenti nella cartella corrente
+alla ricerca di una sequenza sintattica specifica, anche se intervallata da altri caratteri.
+
+La ricerca è case-insensitive e può includere sia lettere che simboli.
+Le lettere devono essere trovate come blocco unito, mentre i simboli possono essere dispersi
+ma devono apparire in ordine.
+
+Esempi:
+--------
+Pattern: SCREEN(,,)
+Trova:   ' screen(25,c,0)
+Ignora:  screen 12 ' 640x480 (modalità VGA...)
+
+Pattern: da Venezia, 19
+Trova:   'by Marco da Venezia, 1985
+Ignora:  'da V e n e z i a , 1 9
+
+Funzionamento:
+--------------
+1. Il programma genera una lista dei file .BAS con DIR /B > TEMP.TXT
+2. Chiede all'utente una stringa da cercare
+3. Analizza ogni riga di ogni file, inclusi i commenti
+4. Verifica se la stringa è presente secondo le regole sintattiche
+5. Stampa i risultati a video e li salva in ANALISI.TXT
+
+Note tecniche:
+--------------
+- La funzione MatchSintattico$ separa lettere e simboli
+- Le lettere vengono cercate come blocco unito
+- I simboli vengono cercati in ordine, anche se intervallati
+- Il programma è compatibile con ambienti a 16 e 64 bit
+- Non richiede librerie esterne
+
+Filosofia:
+----------
+FIND4BAS è uno strumento di archeologia sintattica.
+Permette di riscoprire tracce di codice dimenticato, commenti significativi,
+e frammenti di logica che altrimenti resterebbero sepolti.
+
+È piccolo, veloce, elegante, e parla la lingua del BASIC puro.
+
+Licenza:
+--------
+Libero per uso personale, didattico e archeologico.
+Condividi con chi ama il codice come memoria.
